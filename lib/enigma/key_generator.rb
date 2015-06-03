@@ -5,7 +5,7 @@ class KeyGenerator
 	end
 
 	def number
-		@number.join.to_i
+		@number.join.to_s
 	end
 
 	def generate_number

@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require_relative '../../lib/enigma/key_generator'
+require 'pry'
 
 class KeyGeneratorTest < Minitest::Test
 
@@ -8,14 +9,14 @@ class KeyGeneratorTest < Minitest::Test
 		key = KeyGenerator.new
 		key.generate_number
 
-		assert key.number.is_a?(Fixnum)
+		refute_equal nil, key.number =~ /\A(0|1|2|3|4|5|6|7|8|9)\Z/
 	end
 
 	def test_it_generates_key_of_five_digits
 		key = KeyGenerator.new
 		key.generate_key
 
-		assert key.number.to_s.length == 5
+		refute_equal nil, key.number =~ /\A(0|1|2|3|4|5|6|7|8|9){5}\Z/
 	end
 
 	def test_it_generates_different_keys

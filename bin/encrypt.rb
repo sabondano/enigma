@@ -7,7 +7,7 @@ today = Time.new.strftime("%d%m%y")
 key = KeyGenerator.new
 key.generate_key
 offset = OffsetCalculator.new(today, key)
-encryptor = Encryptor.new(message, final_rotations)
+encryptor = Encryptor.new(message, offset.final_rotations)
 
 
 puts "Created '#{encryption_file}' with the key #{key.number} and date #{today}"

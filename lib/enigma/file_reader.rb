@@ -8,7 +8,9 @@ class FileReader
 
 	def read_message
 		file = File.open(filename, 'r')
-		file.read
+		message = file.read
+		file.close
+		message
 	end
 
 end

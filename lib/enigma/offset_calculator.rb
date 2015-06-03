@@ -43,6 +43,15 @@ class OffsetCalculator
 
 	def final_d_rotation
 		key.rotation("D") + offset("D")
- 	end
+	end
+
+	def all_final_rotations
+		final_rotations = []
+		final_rotations << final_a_rotation
+		final_rotations << final_b_rotation
+		final_rotations << final_c_rotation
+		final_rotations << final_d_rotation
+		final_rotations
+	end
 
 end

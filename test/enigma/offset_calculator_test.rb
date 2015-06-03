@@ -93,6 +93,14 @@ class OffsetCalculatorTest < Minitest::Test
 		offset = OffsetCalculator.new("020315", key)
 
 		assert_equal 26, offset.final_d_rotation
+		end
+
+	def test_all_final_rotations_will_return_all_final_rotations_in_an_array
+		key = KeyGenerator.new([4, 1, 5, 2, 1])
+		offset = OffsetCalculator.new("020315", key)
+		final_rotations = offset.all_final_rotations
+
+		assert_equal [50, 17, 54, 26], final_rotations
 	end
 
 

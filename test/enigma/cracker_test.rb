@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require '../../lib/enigma/cracker'
+require_relative '../../lib/enigma/cracker'
 
 class CrackerTest < Minitest::Test
 	def test_it_finds_the_correct_rotation_type_for_the_letter_n_given_a_file_that_ends_in_the_given_tip
